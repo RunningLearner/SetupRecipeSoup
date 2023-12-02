@@ -10,7 +10,7 @@ services:
       - ./nginx:/etc/nginx/conf.d
       - ./nginx/certificates:/etc/nginx/certificates
     depends_on:
-      - react-app
+      # - react-app
       - nest-app
     networks:
       - app-network
