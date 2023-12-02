@@ -15,15 +15,15 @@ services:
     networks:
       - app-network
 
-  react-app:
-    container_name: react-app
-    image: runninglearner/recipesoup:latest # Docker Hub에서 가져올 이미지
-    ports:
-      - "3000:3000"
-    env_file:
-      - frontend.env
-    networks:
-      - app-network
+  # react-app:
+  #   container_name: react-app
+  #   image: runninglearner/recipesoup:latest # Docker Hub에서 가져올 이미지
+  #   ports:
+  #     - "3000:3000"
+  #   env_file:
+  #     - frontend.env
+  #   networks:
+  #     - app-network
 
   nest-app:
     container_name: nest-app
