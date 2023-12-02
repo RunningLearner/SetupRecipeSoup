@@ -17,7 +17,7 @@ services:
 
   react-app:
     container_name: react-app
-    image: yourusername/react-app:latest # Docker Hub에서 가져올 이미지
+    image: runninglearner/recipesoup:latest # Docker Hub에서 가져올 이미지
     ports:
       - "3000:3000"
     env_file:
@@ -27,7 +27,7 @@ services:
 
   nest-app:
     container_name: nest-app
-    image: yourusername/nest-app:latest # Docker Hub에서 가져올 이미지
+    image: runninglearner/recipesoupapi:latest # Docker Hub에서 가져올 이미지
     ports:
       - "5000:5000"
     volumes:
