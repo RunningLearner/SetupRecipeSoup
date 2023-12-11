@@ -22,6 +22,8 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     command: certonly --webroot -w /var/www/certbot --force-renewal --email tkacnsdms1@gmail.com -d http://recipesoup.koreacentral.cloudapp.azure.com --agree-tos
+    networks:
+      - app-network
     
   react-app:
     container_name: react-app
