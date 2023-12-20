@@ -1,4 +1,4 @@
-version: "3.8"
+version: "2.4"
 services:
   nginx:
     container_name: nginx
@@ -15,6 +15,7 @@ services:
       - nest-app
     networks:
       - app-network
+    cpus: 0.5
       
   certbot:
     image: certbot/certbot
@@ -25,6 +26,7 @@ services:
     command: certonly --webroot -w /var/www/certbot --force-renewal --email tkacnsdms1@gmail.com -d recipesoup.site --agree-tos
     networks:
       - app-network
+    cpus: 0.5
     
   react-app:
     container_name: react-app
@@ -35,6 +37,7 @@ services:
       - frontend.env
     networks:
       - app-network
+    cpus: 0.5
 
   nest-app:
     container_name: nest-app
@@ -49,6 +52,7 @@ services:
       - db
     networks:
       - app-network
+    cpus: 0.5
 
   db:
     container_name: db
@@ -63,6 +67,7 @@ services:
       - ./data:/var/lib/postgresql/data
     networks:
       - app-network
+    cpus: 0.5
 
 networks:
   app-network:
