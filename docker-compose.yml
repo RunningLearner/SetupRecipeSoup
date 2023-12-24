@@ -37,7 +37,7 @@ services:
       - frontend.env
     networks:
       - app-network
-    cpus: 0.5
+    cpus: 0.3
 
   nest-app:
     container_name: nest-app
@@ -52,7 +52,7 @@ services:
       - db
     networks:
       - app-network
-    cpus: 0.5
+    cpus: 0.3
 
   db:
     container_name: db
