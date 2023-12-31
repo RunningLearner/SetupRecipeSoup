@@ -16,18 +16,18 @@ services:
     networks:
       - app-network
     cpus: 0.5
-      
+
   certbot:
     image: certbot/certbot
     container_name: certbot
-    volumes: 
+    volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
     command: certonly --webroot -w /var/www/certbot --force-renewal --email tkacnsdms1@gmail.com -d recipesoup.site --agree-tos
     networks:
       - app-network
     cpus: 0.5
-    
+
   react-app:
     container_name: react-app
     image: runninglearner/recipesoup:latest # Docker Hub에서 가져올 이미지
@@ -46,6 +46,7 @@ services:
       - 5000
     volumes:
       - ./logs:/usr/src/app/logs
+      - ./uploads:/usr/src/app/uploads
     env_file:
       - backend.env
     depends_on:
